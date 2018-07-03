@@ -4,11 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var plus = document.getElementById('plus');
     var checkbox = document.getElementById('checkbox');
     var input = document.getElementById('my-input');
+    var alertBox = document.getElementById('alert-box');
 
     console.log(table);
     console.log(plus);
     console.log(checkbox);
     console.log(input);
+    console.log(alert);
 
 // dodawanie nowego wiersza
 
@@ -29,15 +31,19 @@ document.addEventListener('DOMContentLoaded', function () {
         cell4.innerHTML = '<div class="trash"><img src="./images/trash.png" alt="Delete item"> </img></div>';
     }
 
-    plus.addEventListener("click", function newElement() {
+    plus.addEventListener('click', function newElement() {
 
-        addRow(input.value);
+        if (input.value === '') {
+            alertBox.style.display = 'inline-block';
+        }
+        else {
+            addRow(input.value);
 
-        // czyszczenie wartości inputa po dodaniu
+            // czyszczenie wartości inputa po dodaniu
 
-        input.value = "";
-
-    })
+            input.value = "";
+        }
+    });
 });
 
 

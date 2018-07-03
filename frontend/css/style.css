@@ -105,3 +105,23 @@ input[type=checkbox]:checked:after {
     content: '\f00c';
     color: limegreen;
 }
+
+.alert {
+    padding: 20px;
+    background-color: cornflowerblue;
+    color: white;
+    margin-bottom: 15px;
+    width: 350px;
+    display: none;
+}
+
+.close-button {
+    float: right;
+    margin-left: 15px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 20px;
+    cursor: pointer;
+}
+
