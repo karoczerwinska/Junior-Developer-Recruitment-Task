@@ -15,7 +15,7 @@ table {
 table,
 th,
 td {
-    border: 1px solid #e2c3c3;
+    border: 1px solid #f2e3df;
 }
 
 thead {
@@ -43,7 +43,6 @@ td:nth-of-type(2) {
 th:nth-of-type(3),
 td:nth-of-type(3) {
     border-right: none;
-    /*width: 260px;*/
 }
 
 th:nth-of-type(4),
@@ -75,4 +74,34 @@ input {
 span {
     display: table;
     margin: 0 auto;
+}
+
+i {
+    color: #e8f0f5;
+}
+
+i:hover {
+    cursor: pointer;
+}
+
+input[type=checkbox] {
+    margin: auto 5px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+input[type=checkbox]:after {
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #f2e3df;
+    margin-left: 13px;
+}
+
+input[type=checkbox]:checked:after {
+    font-family: 'FontAwesome';
+    content: '\f00c';
+    color: limegreen;
 }
