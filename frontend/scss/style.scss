@@ -1,0 +1,159 @@
+$backgroundColor: #e8f0f5;
+$doneColor: #9eb2c0;
+$todoColor: #2d3542;
+$alertColor: #9ed0ef;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $backgroundColor;
+  font-family: 'Lato', sans-serif;
+}
+
+table {
+  width: 500px;
+  border-collapse: collapse;
+}
+
+table,
+td {
+  border-bottom: 1px solid #c3d6e2;
+  border-left: 1px solid #9da1a7;
+  border-right: 1px solid #efcbcf;
+}
+
+td:nth-child(4) {
+  border-right: 1px solid #9da1a7;
+}
+
+thead {
+  background-color: $todoColor;
+  color: $backgroundColor;
+  font-size: 20px;
+  text-align: left;
+}
+
+th {
+  height: 55px;
+  border: 1px solid #9da1a7;
+}
+
+th,
+td {
+  &:nth-of-type(1) {
+    width: 55px;
+  }
+
+  &:nth-of-type(2) {
+    width: 5px;
+  }
+
+  &:nth-of-type(3) {
+    border-right: none;
+  }
+
+  &:nth-of-type(4) {
+    border-left: none;
+  }
+}
+
+tbody {
+  background-color: white;
+  color: $todoColor;
+}
+
+tr {
+  height: 55px;
+}
+
+p,
+input {
+  margin: 0 10px;
+}
+
+input {
+  border: none;
+  font-size: 16px;
+  color: #2e3641;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+span {
+  display: table;
+  margin: 0 auto;
+}
+
+i {
+  color: $backgroundColor;
+}
+
+img {
+  width: 15px;
+  height: 15px;
+  display: block;
+  margin-right: 3px;
+}
+
+i,
+img {
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+input[type=checkbox] {
+  margin: 5px;
+  cursor: pointer;
+  visibility: hidden;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    width: 15px;
+    height: 15px;
+    border: 1px solid $backgroundColor;
+    margin-left: 13px;
+  }
+
+  &:checked:after {
+    font-family: 'FontAwesome';
+    content: '\f00c';
+    color: limegreen;
+  }
+}
+
+.alert {
+  padding: 20px;
+  background-color: $alertColor;
+  color: white;
+  margin-bottom: 15px;
+  width: 350px;
+  display: none;
+}
+
+.close-button {
+  float: right;
+  margin-left: 15px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.done-task {
+  text-decoration: line-through;
+  color: $doneColor;
+}
+
+.done-trash {
+  opacity: 0.5;
+}
+
