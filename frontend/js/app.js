@@ -2,15 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var table = document.getElementById('to-do-list');
     var plus = document.getElementById('plus');
-    var checkbox = document.getElementById('checkbox');
     var input = document.getElementById('my-input');
     var alertBox = document.getElementById('alert-box');
-
-    console.log(table);
-    console.log(plus);
-    console.log(checkbox);
-    console.log(input);
-    console.log(alert);
 
 // dodawanie nowego wiersza
 
@@ -27,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         cell1.innerHTML = '<input type="checkbox" class="checkbox">';
         cell2.innerHTML = '';
-        cell3.innerHTML = `<p>${type}</p>`;
+        cell3.innerHTML = `<p>${type.charAt(0).toUpperCase() + type.slice(1)}</p>`;
         cell4.innerHTML = '<div class="trash"><img src="./images/trash.png" alt="Delete item"> </img></div>';
     }
 
@@ -41,9 +34,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // czyszczenie wartości inputa po dodaniu
 
-            input.value = "";
+            input.value = '';
         }
     });
+
+    // wykonanie zadania
+
+    table.addEventListener('click', function(e) {
+
+        // sprawdzenie czy target to obrazek
+
+        if(e.target.matches('img')) {
+
+            // jeżeli tak, to usuń wiersz tabeli
+
+            e.target.parentElement.parentElement.parentElement.remove();
+        }
+
+        // sprawdzenie czy target to checkbox
+
+        else if(e.target.matches('input.checkbox')) {
+
+            // jeśli tak, to zmień klasę na 'done'
+
+            var inputText = e.target.parentNode.parentNode.childNodes[2];
+
+            var trashIcon = e.target.parentNode.parentNode.childNodes[3];
+
+            inputText.classList.toggle('done-task');
+            trashIcon.classList.toggle('done-trash');
+        }
+    })
 });
 
 

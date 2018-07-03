@@ -13,9 +13,14 @@ table {
 }
 
 table,
-th,
 td {
-    border: 1px solid #f2e3df;
+    border-bottom: 1px solid #c3d6e2;
+    border-left: 1px solid #9da1a7;
+    border-right: 1px solid #efcbcf;
+}
+
+td:nth-child(4) {
+    border-right: 1px solid #9da1a7;
 }
 
 thead {
@@ -27,7 +32,7 @@ thead {
 
 th {
     height: 55px;
-    border: 1px solid #adb6bc;
+    border: 1px solid #9da1a7;
 }
 
 th:nth-of-type(1),
@@ -67,8 +72,8 @@ input {
 input {
     outline: none;
     border: none;
-    font-size: 18px;
-    color: #2d3542;
+    font-size: 16px;
+    color: #2e3641;
 }
 
 span {
@@ -85,7 +90,7 @@ i:hover {
 }
 
 input[type=checkbox] {
-    margin: auto 5px;
+    margin: 5px;
     cursor: pointer;
     visibility: hidden;
 }
@@ -96,7 +101,7 @@ input[type=checkbox]:after {
     visibility: visible;
     width: 15px;
     height: 15px;
-    border: 1px solid #f2e3df;
+    border: 1px solid #e8f0f5;
     margin-left: 13px;
 }
 
@@ -125,3 +130,19 @@ input[type=checkbox]:checked:after {
     cursor: pointer;
 }
 
+img {
+    width: 15px;
+    height: 15px;
+    display: block;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+.done-task {
+    text-decoration: line-through;
+    color: #9eb2c0;
+}
+
+.done-trash {
+    opacity: 0.5;
+}
